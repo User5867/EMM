@@ -16,7 +16,7 @@ public class MainCamera : MonoBehaviour
     void Update()
     {
         transform.rotation = target.localRotation;
-        Vector3 offsetRotated = target.localRotation * offset;
+        Vector3 offsetRotated = target.rotation * offset;
         transform.position = target.position + offsetRotated;
     }
 }
