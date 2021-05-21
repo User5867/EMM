@@ -14,6 +14,11 @@ public class RotateMyPrefab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    private void FixedUpdate()
+    {
         transform.rotation *= Quaternion.Euler(0, speed * Time.deltaTime, 0);
     }
 }

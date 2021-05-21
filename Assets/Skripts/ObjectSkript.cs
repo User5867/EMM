@@ -6,12 +6,15 @@ public class ObjectSkript : MonoBehaviour
 {
     [SerializeField]
     private Transform myPrefab;
+    [SerializeField]
+    private Transform myPartikle;
     // Start is called before the first frame update
     void Start()
     {
         for(int i = 0; i < 5; i++)
         {
-            Instantiate(myPrefab, new Vector3(Random.Range(-5.0f, 5.0f), 1, transform.position.z + Random.Range(-5.0f, 5.0f)), Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0), gameObject.transform);
+            Transform temp = Instantiate(myPrefab, new Vector3(Random.Range(-5.0f, 5.0f), 1, Random.Range(-5.0f, 5.0f)), Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0), gameObject.transform);
+            Instantiate(myPartikle, new Vector3(temp.position.x, temp.position.y, temp.position.z), Quaternion.identity, temp);
         }
         
     }

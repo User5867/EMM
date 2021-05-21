@@ -16,6 +16,11 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+    }
+
+    private void FixedUpdate()
+    {
         float moveHorizontal = Input.GetAxis("Horizontal"); 
         float moveVertical = Input.GetAxis("Vertical");
 
